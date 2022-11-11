@@ -8,6 +8,7 @@ import zipfile
 import json
 from collections import ChainMap
 import tqdm
+import streamlit_ext as ste
 
 
 ###Functions
@@ -70,8 +71,5 @@ if submitted:
         st.write("Record of Selected Trials")
         st.dataframe(output_data)
         csv = convert_df(output_data)
-        st.download_button("Press to Download",csv,"file.csv","text/csv",key='download-csv')
-
-
-
+        ste.download_button("Press to Download",csv,"file.csv","text/csv")
 
